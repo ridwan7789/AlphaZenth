@@ -112,7 +112,7 @@ const Index = () => {
               <SocialIcons />
               <div className="flex flex-col md:flex-row items-center justify-between gap-4 w-full">
                 <p className="font-orbitron text-sm text-muted-foreground">
-                  © 2024 ALPHA ZENTH. All rights reserved.
+                  © 2026 ALPHA ZENTH. All rights reserved.
                 </p>
                 <p className="font-rajdhani text-sm text-muted-foreground">
                   Premium Supply Bundler & Precision Sniping Bot

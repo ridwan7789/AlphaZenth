@@ -57,11 +57,6 @@ const HeroSection = () => {
             </motion.button>
           </motion.div>
         </motion.div>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }} className="absolute bottom-10 left-1/2 -translate-x-1/2">
-          <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-6 h-10 border-2 border-metallic-silver/30 rounded-full flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-neon-orange rounded-full" />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
