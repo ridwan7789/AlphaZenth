@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import LoadingScreen from '@/components/LoadingScreen';
+import ParallaxBackground from '@/components/ParallaxBackground';
+import AnnouncementBanner from '@/components/AnnouncementBanner';
 import EmberParticles from '@/components/EmberParticles';
 import FloatingNavbar from '@/components/FloatingNavbar';
 import HeroSection from '@/components/HeroSection';
@@ -13,7 +15,6 @@ import OperatorsSection from '@/components/OperatorsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import WaitlistSection from '@/components/WaitlistSection';
 import FinalCTASection from '@/components/FinalCTASection';
-
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -33,6 +34,12 @@ const Index = () => {
       </AnimatePresence>
 
       <div className="relative bg-deep-space min-h-screen overflow-x-hidden">
+        {/* Parallax Background */}
+        <ParallaxBackground />
+        
+        {/* Announcement Banner */}
+        <AnnouncementBanner />
+        
         {/* Global Ember Particles */}
         <EmberParticles />
         
