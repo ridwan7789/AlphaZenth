@@ -1,10 +1,14 @@
 import EmberParticles from '@/components/EmberParticles';
+import FloatingNavbar from '@/components/FloatingNavbar';
 import HeroSection from '@/components/HeroSection';
+import StatsCounter from '@/components/StatsCounter';
 import WhySection from '@/components/WhySection';
 import SplitFeatureSection from '@/components/SplitFeatureSection';
 import DualModeSection from '@/components/DualModeSection';
 import InterfacePreview from '@/components/InterfacePreview';
 import OperatorsSection from '@/components/OperatorsSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import WaitlistSection from '@/components/WaitlistSection';
 import FinalCTASection from '@/components/FinalCTASection';
 
 const Index = () => {
@@ -13,15 +17,35 @@ const Index = () => {
       {/* Global Ember Particles */}
       <EmberParticles />
       
+      {/* Floating Navigation */}
+      <FloatingNavbar />
+      
       {/* Main Content */}
       <main>
-        <HeroSection />
-        <WhySection />
-        <SplitFeatureSection />
-        <DualModeSection />
-        <InterfacePreview />
-        <OperatorsSection />
-        <FinalCTASection />
+        <div id="hero">
+          <HeroSection />
+        </div>
+        <StatsCounter />
+        <div id="why">
+          <WhySection />
+        </div>
+        <div id="systems">
+          <SplitFeatureSection />
+        </div>
+        <div id="modes">
+          <DualModeSection />
+        </div>
+        <div id="preview">
+          <InterfacePreview />
+        </div>
+        <div id="operators">
+          <OperatorsSection />
+        </div>
+        <TestimonialsSection />
+        <WaitlistSection />
+        <div id="cta">
+          <FinalCTASection />
+        </div>
       </main>
 
       {/* Footer */}
