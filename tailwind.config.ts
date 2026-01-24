@@ -7,8 +7,12 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1rem",
       screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
         "2xl": "1400px",
       },
     },
@@ -123,6 +127,14 @@ export default {
         "glow-pulse-blue": "glow-pulse-blue 2s ease-in-out infinite",
         "rotate-slow": "rotate-slow 20s linear infinite",
         "shimmer": "shimmer 3s linear infinite",
+      },
+      screens: {
+        xs: "475px", // Extra small devices
+        sm: "640px", // Small devices
+        md: "768px", // Medium devices
+        lg: "1024px", // Large devices
+        xl: "1280px", // Extra large devices
+        "2xl": "1400px", // Extra extra large devices
       },
     },
   },

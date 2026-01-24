@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Bot, Users, Twitter, Menu, X } from 'lucide-react';
 import logoClean from '@/assets/logo-clean.jpeg';
 
 const FloatingNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       // Determine active section
       const sections = ['hero', 'why', 'systems', 'modes', 'preview', 'operators', 'testimonials', 'waitlist', 'cta'];
       for (const section of sections.reverse()) {
@@ -44,6 +46,27 @@ const FloatingNavbar = () => {
     { id: 'waitlist', label: 'Access', color: 'blue' },
   ];
 
+  const socialLinks = [
+    {
+      name: 'Telegram Bot',
+      url: 'https://t.me/AlphaZenthbot',
+      icon: Bot,
+      color: 'text-blue-500 hover:text-blue-400'
+    },
+    {
+      name: 'Telegram Channel',
+      url: 'https://t.me/Alpha_Zenth_update',
+      icon: Users,
+      color: 'text-blue-500 hover:text-blue-400'
+    },
+    {
+      name: 'Twitter/X',
+      url: 'https://x.com/AlphaZenth',
+      icon: Twitter,
+      color: 'text-gray-300 hover:text-white'
+    }
+  ];
+
   return (
     <AnimatePresence>
       <motion.nav
@@ -54,20 +77,21 @@ const FloatingNavbar = () => {
           isScrolled ? 'bg-deep-space/90 backdrop-blur-xl border-b border-border/30' : 'bg-transparent'
         }`}
       >
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <motion.button
               onClick={() => scrollTo('hero')}
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-3 group"
+              aria-label="Go to home section"
             >
               <div className="relative">
                 <div className="absolute inset-0 bg-neon-orange/30 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                <img 
-                  src={logoClean} 
-                  alt="ALPHA ZENTH" 
-                  className="w-10 h-10 rounded-full object-cover border-2 border-neon-orange/50 group-hover:border-neon-orange transition-colors"
+                <img
+                  src={logoClean}
+                  alt="ALPHA ZENTH"
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-neon-orange/50 group-hover:border-neon-orange transition-colors"
                 />
               </div>
               <span className="font-orbitron font-bold text-metallic hidden sm:block">
@@ -75,25 +99,25 @@ const FloatingNavbar = () => {
               </span>
             </motion.button>
 
-            {/* Nav Links */}
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
                 <motion.button
                   key={link.id}
                   onClick={() => scrollTo(link.id)}
                   whileHover={{ scale: 1.05 }}
-                  className={`relative px-4 py-2 font-orbitron text-sm tracking-wider transition-all duration-300 group ${
-                    activeSection === link.id 
+                  className={`relative px-3 sm:px-4 py-2 font-orbitron text-sm tracking-wider transition-all duration-300 group ${
+                    activeSection === link.id
                       ? link.color === 'orange' ? 'text-neon-orange' : 'text-electric-blue'
                       : 'text-metallic-silver hover:text-foreground'
                   }`}
                 >
                   {link.label}
                   {/* Glow effect on hover */}
-                  <span 
+                  <span
                     className={`absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity ${
-                      link.color === 'orange' 
-                        ? 'bg-neon-orange/10 shadow-[0_0_20px_hsl(15_100%_55%/0.3)]' 
+                      link.color === 'orange'
+                        ? 'bg-neon-orange/10 shadow-[0_0_20px_hsl(15_100%_55%/0.3)]'
                         : 'bg-electric-blue/10 shadow-[0_0_20px_hsl(195_100%_50%/0.3)]'
                     }`}
                   />
@@ -108,20 +132,114 @@ const FloatingNavbar = () => {
                   )}
                 </motion.button>
               ))}
+
+              {/* Desktop Social Icons */}
+              <div className="flex items-center gap-3 ml-4">
+                {socialLinks.map((social, index) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.name}
+                      className={`${social.color} transition-colors duration-300`}
+                    >
+                      <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex items-center gap-3">
-              <motion.button
-                onClick={() => scrollTo('waitlist')}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            {/* Mobile menu button */}
+            <div className="flex items-center gap-3 md:hidden">
+              {/* Mobile Social Icons */}
+              <div className="flex items-center gap-2">
+                {socialLinks.map((social, index) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.name}
+                      className={`${social.color} transition-colors duration-300`}
+                    >
+                      <IconComponent className="w-4 h-4" />
+                    </a>
+                  );
+                })}
+              </div>
+
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 rounded-md text-metallic-silver hover:text-foreground focus:outline-none focus:ring-2 focus:ring-neon-orange"
+                aria-expanded={mobileMenuOpen}
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              >
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
+
+            {/* Mobile CTA Button */}
+            <div className="hidden md:block">
+              <a
+                href="https://t.me/AlphaZenthbot"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-4 py-2 bg-gradient-to-r from-neon-orange to-fire-red rounded-lg font-orbitron text-xs sm:text-sm tracking-wider text-background font-bold shadow-[0_0_20px_hsl(15_100%_55%/0.3)] hover:shadow-[0_0_30px_hsl(15_100%_55%/0.5)] transition-shadow"
               >
-                JOIN BETA
-              </motion.button>
+                LAUNCH ALPHA ZENTH
+              </a>
             </div>
           </div>
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="md:hidden overflow-hidden"
+              >
+                <div className="pb-4 space-y-2">
+                  {navLinks.map((link) => (
+                    <motion.button
+                      key={link.id}
+                      onClick={() => {
+                        scrollTo(link.id);
+                        setMobileMenuOpen(false);
+                      }}
+                      whileHover={{ scale: 1.02 }}
+                      className={`w-full text-left px-4 py-3 font-orbitron text-sm tracking-wider transition-all duration-300 ${
+                        activeSection === link.id
+                          ? link.color === 'orange' ? 'text-neon-orange bg-orange-500/10' : 'text-electric-blue bg-blue-500/10'
+                          : 'text-metallic-silver hover:bg-background/20'
+                      }`}
+                    >
+                      {link.label}
+                    </motion.button>
+                  ))}
+
+                  {/* Mobile CTA Button */}
+                  <a
+                    href="https://t.me/AlphaZenthbot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full px-4 py-3 bg-gradient-to-r from-neon-orange to-fire-red rounded-lg font-orbitron text-sm tracking-wider text-background font-bold text-center shadow-[0_0_20px_hsl(15_100%_55%/0.3)] hover:shadow-[0_0_30px_hsl(15_100%_55%/0.5)] transition-shadow"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    LAUNCH ALPHA ZENTH
+                  </a>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </motion.nav>
     </AnimatePresence>
