@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion';
 import logoClean from '@/assets/logo-clean.jpeg';
+import heroBg from '@/assets/hero-bg.jpeg';
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-space">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-space/60 via-deep-space/40 to-deep-space" />
+      </div>
+
       {/* Targeting Reticle Background */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative w-[600px] h-[600px] md:w-[800px] md:h-[800px]">
@@ -37,7 +44,7 @@ const HeroSection = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex flex-col items-center text-center"
         >
-          {/* Floating Logo */}
+          {/* Floating Logo - Rounded */}
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -47,7 +54,7 @@ const HeroSection = () => {
             <img 
               src={logoClean} 
               alt="ALPHA ZENTH" 
-              className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain breathing drop-shadow-2xl"
+              className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-full breathing drop-shadow-2xl border-4 border-neon-orange/30"
             />
           </motion.div>
 

@@ -1,6 +1,7 @@
 import { motion, useInView, useMotionValue, useTransform } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import mobileMockup from '@/assets/mobile-mockup.jpeg';
+import heroBg from '@/assets/hero-bg.jpeg';
 
 const InterfacePreview = () => {
   const ref = useRef(null);
@@ -29,6 +30,12 @@ const InterfacePreview = () => {
 
   return (
     <section ref={ref} className="relative py-32 bg-deep-space overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-15" />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space/90 to-deep-space" />
+      </div>
+
       {/* Radial Glow Background */}
       <div 
         className="absolute inset-0"

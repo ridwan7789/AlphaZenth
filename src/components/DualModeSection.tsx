@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import badgesDual from '@/assets/badges-dual.jpeg';
+import heroBg from '@/assets/hero-bg.jpeg';
 
 const DualModeSection = () => {
   const ref = useRef(null);
@@ -8,6 +9,11 @@ const DualModeSection = () => {
 
   return (
     <section ref={ref} className="relative py-32 bg-deep-space overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space/90 to-deep-space" />
+      </div>
       <div className="absolute inset-0 grid-bg opacity-20" />
 
       <div className="container relative z-10 px-6">
