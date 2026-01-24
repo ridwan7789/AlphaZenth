@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alphazenth.xyz/sitemap.xml
+Sitemap: https://alphazenth.xyz/api/sitemap.xml

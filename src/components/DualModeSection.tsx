@@ -1,7 +1,5 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import badgesDual from '@/assets/badges-dual.jpeg';
-import heroBg from '@/assets/hero-bg.jpeg';
 
 const DualModeSection = () => {
   const ref = useRef(null);
@@ -10,7 +8,7 @@ const DualModeSection = () => {
   return (
     <section ref={ref} className="relative py-32 bg-deep-space overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-50" />
+        <img src="/assets/hero-bg.jpeg" alt="" className="w-full h-full object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space/40 via-deep-space/30 to-deep-space/40" />
       </div>
       <div className="absolute inset-0 grid-bg opacity-20" />
@@ -22,7 +20,7 @@ const DualModeSection = () => {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, scale: 0.8, rotateX: 20 }} animate={isInView ? { opacity: 1, scale: 1, rotateX: 0 } : {}} transition={{ duration: 1, delay: 0.3 }} className="relative max-w-5xl mx-auto mb-16" style={{ perspective: '1000px' }}>
-          <motion.img src={badgesDual} alt="Supply Bundle and Sniper Bot" className="w-full rounded-2xl shadow-2xl" whileHover={{ scale: 1.02 }} />
+          <motion.img src="/assets/badges-dual.jpeg" alt="Supply Bundle and Sniper Bot" className="w-full rounded-2xl shadow-2xl" whileHover={{ scale: 1.02 }} />
           <div className="absolute inset-0 bg-gradient-to-t from-deep-space via-transparent to-transparent rounded-2xl" />
           <motion.div className="absolute -top-10 -left-10 w-40 h-40 bg-neon-orange/20 rounded-full blur-3xl" animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }} transition={{ duration: 4, repeat: Infinity }} />
           <motion.div className="absolute -bottom-10 -right-10 w-40 h-40 bg-electric-blue/20 rounded-full blur-3xl" animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }} transition={{ duration: 4, repeat: Infinity }} />

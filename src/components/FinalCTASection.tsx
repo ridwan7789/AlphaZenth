@@ -1,7 +1,5 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import logoFull from '@/assets/logo-full.jpeg';
-import heroBg from '@/assets/hero-bg.jpeg';
 
 const FinalCTASection = () => {
   const ref = useRef(null);
@@ -11,29 +9,29 @@ const FinalCTASection = () => {
     <section ref={ref} className="relative py-32 overflow-hidden bg-deep-space">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-60" />
+        <img src="/assets/hero-bg.jpeg" alt="" className="w-full h-full object-cover opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-space/50 via-deep-space/30 to-deep-space/40" />
       </div>
 
       {/* Intense Background Effects */}
-      <div 
+      <div
         className="absolute inset-0"
-        style={{ 
-          background: 'radial-gradient(ellipse at 50% 100%, hsl(15 100% 55% / 0.2) 0%, transparent 60%)' 
+        style={{
+          background: 'radial-gradient(ellipse at 50% 100%, hsl(15 100% 55% / 0.2) 0%, transparent 60%)'
         }}
       />
-      <div 
+      <div
         className="absolute inset-0"
-        style={{ 
-          background: 'radial-gradient(ellipse at 50% 0%, hsl(195 100% 50% / 0.1) 0%, transparent 40%)' 
+        style={{
+          background: 'radial-gradient(ellipse at 50% 0%, hsl(195 100% 50% / 0.1) 0%, transparent 40%)'
         }}
       />
 
       {/* Logo Watermark */}
       <div className="absolute inset-0 flex items-center justify-center opacity-10">
-        <img 
-          src={logoFull} 
-          alt="" 
+        <img
+          src="/assets/logo-full.jpeg"
+          alt=""
           className="w-full max-w-4xl object-contain"
         />
       </div>
@@ -53,7 +51,7 @@ const FinalCTASection = () => {
               <br />
               <span className="text-neon-orange text-glow-orange">Others Notice.</span>
             </h2>
-            
+
             <p className="font-orbitron text-2xl md:text-4xl text-metallic-silver mb-4">
               Execute Before
               <br />

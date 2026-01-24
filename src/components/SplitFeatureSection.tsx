@@ -1,6 +1,5 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import heroBg from '@/assets/hero-bg.jpeg';
 
 const SplitFeatureSection = () => {
   const ref = useRef(null);
@@ -8,9 +7,9 @@ const SplitFeatureSection = () => {
 
   const headerVariants = {
     hidden: { opacity: 0, y: 60, filter: 'blur(15px)' },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
+    visible: {
+      opacity: 1,
+      y: 0,
       filter: 'blur(0px)',
       transition: { duration: 0.8, ease: "easeOut" },
     },
@@ -35,9 +34,9 @@ const SplitFeatureSection = () => {
     <section ref={ref} className="relative py-32 bg-deep-space overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img 
-          src={heroBg} 
-          alt="" 
+        <img
+          src="/assets/hero-bg.jpeg"
+          alt=""
           className="w-full h-full object-cover opacity-55"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-space/50 via-deep-space/30 to-deep-space/50" />
@@ -50,11 +49,11 @@ const SplitFeatureSection = () => {
           variants={headerVariants}
           className="text-center mb-16"
         >
-          <motion.h2 
+          <motion.h2
             className="font-orbitron text-3xl md:text-5xl font-bold text-metallic mb-4"
           >
             CORE{' '}
-            <motion.span 
+            <motion.span
               className="text-fire-red text-glow-red inline-block"
               initial={{ opacity: 0, scale: 0 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -74,23 +73,23 @@ const SplitFeatureSection = () => {
             initial={{ opacity: 0, x: -100, rotateY: -15, filter: 'blur(15px)' }}
             animate={isInView ? { opacity: 1, x: 0, rotateY: 0, filter: 'blur(0px)' } : {}}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-            whileHover={{ 
-              scale: 1.02, 
+            whileHover={{
+              scale: 1.02,
               rotateY: 5,
               boxShadow: '0 0 40px hsl(15 100% 55% / 0.3)',
             }}
             className="card-glow-orange bg-card/80 backdrop-blur-sm rounded-xl p-8 relative group"
             style={{ transformStyle: 'preserve-3d' }}
           >
-            <motion.div 
+            <motion.div
               className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-orange via-fire-red to-neon-orange"
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.5 }}
             />
-            
+
             <div className="flex items-center gap-4 mb-6">
-              <motion.span 
+              <motion.span
                 className="text-4xl"
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
@@ -101,10 +100,10 @@ const SplitFeatureSection = () => {
                 AUTOMATED BUNDLING
               </h3>
             </div>
-            
+
             <ul className="space-y-4 font-rajdhani text-lg text-foreground/80">
               {features.bundling.map((item, i) => (
-                <motion.li 
+                <motion.li
                   key={i}
                   initial={{ opacity: 0, x: -30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -112,7 +111,7 @@ const SplitFeatureSection = () => {
                   className="flex items-start gap-3"
                   whileHover={{ x: 10, color: 'hsl(15 100% 55%)' }}
                 >
-                  <motion.span 
+                  <motion.span
                     className="text-neon-orange mt-1"
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1, repeat: Infinity, repeatDelay: 2, delay: i * 0.2 }}
@@ -124,13 +123,13 @@ const SplitFeatureSection = () => {
               ))}
             </ul>
 
-            <motion.div 
+            <motion.div
               className="mt-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.8 }}
             >
-              <motion.button 
+              <motion.button
                 className="btn-orange w-full py-4 rounded-lg text-background font-orbitron tracking-wider"
                 whileHover={{ scale: 1.02, boxShadow: '0 0 30px hsl(15 100% 55% / 0.5)' }}
                 whileTap={{ scale: 0.98 }}
@@ -145,23 +144,23 @@ const SplitFeatureSection = () => {
             initial={{ opacity: 0, x: 100, rotateY: 15, filter: 'blur(15px)' }}
             animate={isInView ? { opacity: 1, x: 0, rotateY: 0, filter: 'blur(0px)' } : {}}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
-            whileHover={{ 
-              scale: 1.02, 
+            whileHover={{
+              scale: 1.02,
               rotateY: -5,
               boxShadow: '0 0 40px hsl(195 100% 50% / 0.3)',
             }}
             className="card-glow-blue bg-card/80 backdrop-blur-sm rounded-xl p-8 relative group"
             style={{ transformStyle: 'preserve-3d' }}
           >
-            <motion.div 
+            <motion.div
               className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-electric-blue via-electric-cyan to-electric-blue"
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.7 }}
             />
-            
+
             <div className="flex items-center gap-4 mb-6">
-              <motion.span 
+              <motion.span
                 className="text-4xl"
                 animate={{ rotate: [0, -10, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
@@ -172,10 +171,10 @@ const SplitFeatureSection = () => {
                 SNIPES IN SECONDS
               </h3>
             </div>
-            
+
             <ul className="space-y-4 font-rajdhani text-lg text-foreground/80">
               {features.sniper.map((item, i) => (
-                <motion.li 
+                <motion.li
                   key={i}
                   initial={{ opacity: 0, x: -30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -183,7 +182,7 @@ const SplitFeatureSection = () => {
                   className="flex items-start gap-3"
                   whileHover={{ x: 10, color: 'hsl(195 100% 50%)' }}
                 >
-                  <motion.span 
+                  <motion.span
                     className="text-electric-blue mt-1"
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1, repeat: Infinity, repeatDelay: 2, delay: i * 0.2 }}
@@ -195,13 +194,13 @@ const SplitFeatureSection = () => {
               ))}
             </ul>
 
-            <motion.div 
+            <motion.div
               className="mt-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 1 }}
             >
-              <motion.button 
+              <motion.button
                 className="btn-blue w-full py-4 rounded-lg text-background font-orbitron tracking-wider"
                 whileHover={{ scale: 1.02, boxShadow: '0 0 30px hsl(195 100% 50% / 0.5)' }}
                 whileTap={{ scale: 0.98 }}

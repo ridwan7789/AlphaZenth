@@ -1,6 +1,5 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import heroBg from '@/assets/hero-bg.jpeg';
 
 const TestimonialsSection = () => {
   const ref = useRef(null);
@@ -45,7 +44,7 @@ const TestimonialsSection = () => {
     <section id="testimonials" ref={ref} className="relative py-32 bg-deep-space overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-50" />
+        <img src="/assets/hero-bg.jpeg" alt="" className="w-full h-full object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space/40 via-deep-space/30 to-deep-space/40" />
       </div>
 
@@ -81,8 +80,8 @@ const TestimonialsSection = () => {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className={`relative bg-card/40 backdrop-blur-sm border rounded-lg overflow-hidden group ${
-                testimonial.color === 'orange' 
-                  ? 'border-neon-orange/20 hover:border-neon-orange/40' 
+                testimonial.color === 'orange'
+                  ? 'border-neon-orange/20 hover:border-neon-orange/40'
                   : 'border-electric-blue/20 hover:border-electric-blue/40'
               } transition-all duration-300`}
             >
@@ -99,8 +98,8 @@ const TestimonialsSection = () => {
                   </span>
                 </div>
                 <span className={`font-orbitron text-xs tracking-wider ${
-                  testimonial.classification === 'TOP SECRET' 
-                    ? 'text-fire-red' 
+                  testimonial.classification === 'TOP SECRET'
+                    ? 'text-fire-red'
                     : testimonial.classification === 'CLASSIFIED'
                     ? 'text-neon-orange'
                     : 'text-electric-blue'

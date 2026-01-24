@@ -2,7 +2,6 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import heroBg from '@/assets/hero-bg.jpeg';
 
 interface WaitlistFormProps {
   type: 'beta_app' | 'alpha_labs';
@@ -308,7 +307,7 @@ const WaitlistSection = () => {
     <section id="waitlist" ref={ref} className="relative py-20 sm:py-32 bg-deep-space overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-55" />
+        <img src="/assets/hero-bg.jpeg" alt="" className="w-full h-full object-cover opacity-55" />
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space/40 via-deep-space/30 to-deep-space/40" />
       </div>
 

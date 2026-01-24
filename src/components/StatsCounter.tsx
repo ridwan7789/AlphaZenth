@@ -1,6 +1,5 @@
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
-import heroBg from '@/assets/hero-bg.jpeg';
 
 interface CounterProps {
   end: number;
@@ -79,7 +78,7 @@ const StatsCounter = () => {
     <section ref={ref} className="relative py-20 bg-deep-space overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-50" />
+        <img src="/assets/hero-bg.jpeg" alt="" className="w-full h-full object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space/40 via-deep-space/30 to-deep-space/40" />
       </div>
 
@@ -109,16 +108,16 @@ const StatsCounter = () => {
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className={`relative p-6 md:p-8 rounded-xl backdrop-blur-sm border ${
-                stat.color === 'orange' 
-                  ? 'bg-neon-orange/5 border-neon-orange/20 hover:border-neon-orange/50' 
+                stat.color === 'orange'
+                  ? 'bg-neon-orange/5 border-neon-orange/20 hover:border-neon-orange/50'
                   : 'bg-electric-blue/5 border-electric-blue/20 hover:border-electric-blue/50'
               } transition-all duration-300 group`}
             >
               {/* Glow effect */}
-              <div 
+              <div
                 className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity ${
-                  stat.color === 'orange' 
-                    ? 'shadow-[inset_0_0_30px_hsl(15_100%_55%/0.1)]' 
+                  stat.color === 'orange'
+                    ? 'shadow-[inset_0_0_30px_hsl(15_100%_55%/0.1)]'
                     : 'shadow-[inset_0_0_30px_hsl(195_100%_50%/0.1)]'
                 }`}
               />
@@ -127,9 +126,9 @@ const StatsCounter = () => {
               <div className={`font-orbitron text-3xl md:text-5xl font-black mb-2 ${
                 stat.color === 'orange' ? 'text-neon-orange text-glow-orange' : 'text-electric-blue text-glow-blue'
               }`}>
-                <Counter 
-                  end={stat.value} 
-                  suffix={stat.suffix} 
+                <Counter
+                  end={stat.value}
+                  suffix={stat.suffix}
                   prefix={stat.prefix}
                   decimals={stat.decimals}
                   duration={2 + index * 0.3}

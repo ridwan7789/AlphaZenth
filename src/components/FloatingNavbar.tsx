@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bot, Users, Twitter, Menu, X } from 'lucide-react';
-import logoClean from '@/assets/logo-clean.jpeg';
 
 const FloatingNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -89,7 +88,7 @@ const FloatingNavbar = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-neon-orange/30 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                 <img
-                  src={logoClean}
+                  src="/assets/logo-clean.jpeg"
                   alt="ALPHA ZENTH"
                   className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-neon-orange/50 group-hover:border-neon-orange transition-colors"
                 />

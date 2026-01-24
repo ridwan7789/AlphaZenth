@@ -1,16 +1,14 @@
 import { motion, useInView, useMotionValue, useTransform } from 'framer-motion';
 import { useRef, useEffect } from 'react';
-import mobileMockup from '@/assets/mobile-mockup.jpeg';
-import heroBg from '@/assets/hero-bg.jpeg';
 
 const InterfacePreview = () => {
   const ref = useRef(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  
+
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  
+
   const rotateX = useTransform(mouseY, [-300, 300], [15, -15]);
   const rotateY = useTransform(mouseX, [-300, 300], [-15, 15]);
 
@@ -32,15 +30,15 @@ const InterfacePreview = () => {
     <section ref={ref} className="relative py-32 bg-deep-space overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-45" />
+        <img src="/assets/hero-bg.jpeg" alt="" className="w-full h-full object-cover opacity-45" />
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space/40 via-deep-space/30 to-deep-space/40" />
       </div>
 
       {/* Radial Glow Background */}
-      <div 
+      <div
         className="absolute inset-0"
-        style={{ 
-          background: 'radial-gradient(ellipse at 50% 50%, hsl(15 100% 55% / 0.08) 0%, transparent 50%)' 
+        style={{
+          background: 'radial-gradient(ellipse at 50% 50%, hsl(15 100% 55% / 0.08) 0%, transparent 50%)'
         }}
       />
 
@@ -70,19 +68,19 @@ const InterfacePreview = () => {
           >
             {/* Phone Glow Effect */}
             <div className="absolute -inset-4 bg-gradient-to-b from-neon-orange/30 via-transparent to-electric-blue/30 blur-2xl rounded-3xl" />
-            
+
             {/* Phone Frame */}
             <div className="relative bg-gradient-to-b from-gunmetal to-secondary rounded-[3rem] p-2 shadow-2xl">
               <div className="absolute top-6 left-1/2 -translate-x-1/2 w-24 h-6 bg-background rounded-full" />
-              <img 
-                src={mobileMockup} 
-                alt="ALPHA ZENTH Interface" 
+              <img
+                src="/assets/mobile-mockup.jpeg"
+                alt="ALPHA ZENTH Interface"
                 className="w-full rounded-[2.5rem] object-cover"
               />
             </div>
 
             {/* Reflection */}
-            <div 
+            <div
               className="absolute inset-0 rounded-[3rem] opacity-20 pointer-events-none"
               style={{
                 background: 'linear-gradient(135deg, transparent 30%, hsl(0 0% 100% / 0.3) 50%, transparent 70%)'
@@ -104,7 +102,7 @@ const InterfacePreview = () => {
             { icon: "🛡️", text: "Secure Operations" },
             { icon: "📊", text: "Real-time Data" },
           ].map((item, index) => (
-            <div 
+            <div
               key={index}
               className="flex items-center gap-3 px-6 py-3 bg-card/50 border border-border rounded-full"
             >

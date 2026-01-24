@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import logoClean from '@/assets/logo-clean.jpeg';
 
 const LoadingScreen = () => {
   return (
@@ -82,7 +81,7 @@ const LoadingScreen = () => {
             className="absolute inset-0 blur-3xl bg-fire-red/40 rounded-full"
           />
           <img
-            src={logoClean}
+            src="/assets/logo-clean.jpeg"
             alt="ALPHA ZENTH"
             className="relative w-32 h-32 rounded-full object-cover border-4 border-neon-orange/50"
           />

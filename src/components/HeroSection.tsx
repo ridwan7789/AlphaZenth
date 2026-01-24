@@ -1,16 +1,14 @@
 import { motion } from 'framer-motion';
-import logoClean from '@/assets/logo-clean.jpeg';
-import heroBg from '@/assets/hero-bg.jpeg';
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-space">
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-60" />
+        <img src="/assets/hero-bg.jpeg" alt="" className="w-full h-full object-cover opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space/40 via-deep-space/20 to-deep-space/60" />
       </div>
 
-      <motion.div 
+      <motion.div
         className="absolute inset-0 flex items-center justify-center"
         initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
         animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -37,7 +35,7 @@ const HeroSection = () => {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, staggerChildren: 0.15 }} className="flex flex-col items-center text-center">
           <motion.div initial={{ opacity: 0, y: 50, filter: 'blur(10px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 0.8, delay: 0.3 }} className="relative mb-8">
             <motion.div className="absolute inset-0 blur-3xl bg-fire-red/30 rounded-full scale-150" animate={{ scale: [1.5, 1.8, 1.5], opacity: [0.3, 0.5, 0.3] }} transition={{ duration: 3, repeat: Infinity }} />
-            <motion.img src={logoClean} alt="ALPHA ZENTH" className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-full drop-shadow-2xl border-4 border-neon-orange/30" animate={{ y: [0, -15, 0] }} transition={{ duration: 4, repeat: Infinity }} />
+            <motion.img src="/assets/logo-clean.jpeg" alt="ALPHA ZENTH" className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-full drop-shadow-2xl border-4 border-neon-orange/30" animate={{ y: [0, -15, 0] }} transition={{ duration: 4, repeat: Infinity }} />
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="font-orbitron text-4xl md:text-6xl lg:text-7xl font-black text-metallic mb-4 tracking-wider">
             ALPHA <span className="text-neon-orange text-glow-orange">ZENTH</span>
