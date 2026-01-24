@@ -79,8 +79,8 @@ const StatsCounter = () => {
     <section ref={ref} className="relative py-20 bg-deep-space overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space/95 to-deep-space" />
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-space/40 via-deep-space/30 to-deep-space/40" />
       </div>
 
       {/* Scanline effect */}

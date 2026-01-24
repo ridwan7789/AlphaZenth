@@ -10,8 +10,8 @@ const OperatorsSection = () => {
     <section ref={ref} className="relative py-32 bg-deep-space overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-25" />
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space/80 to-deep-space" />
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-space/40 via-deep-space/30 to-deep-space/40" />
       </div>
 
       {/* Scanlines Effect */}

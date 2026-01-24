@@ -11,8 +11,8 @@ const FinalCTASection = () => {
     <section ref={ref} className="relative py-32 overflow-hidden bg-deep-space">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep-space via-deep-space/70 to-deep-space" />
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-deep-space/50 via-deep-space/30 to-deep-space/40" />
       </div>
 
       {/* Intense Background Effects */}
