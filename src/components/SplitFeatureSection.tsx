@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import featureSplit from '@/assets/feature-split.jpeg';
+import heroBg from '@/assets/hero-bg.jpeg';
 
 const SplitFeatureSection = () => {
   const ref = useRef(null);
@@ -11,9 +11,9 @@ const SplitFeatureSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
-          src={featureSplit} 
-          alt="Core Systems" 
-          className="w-full h-full object-cover opacity-40"
+          src={heroBg} 
+          alt="" 
+          className="w-full h-full object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-space via-deep-space/80 to-deep-space" />
       </div>

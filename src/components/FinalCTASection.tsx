@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import logoFull from '@/assets/logo-full.jpeg';
+import heroBg from '@/assets/hero-bg.jpeg';
 
 const FinalCTASection = () => {
   const ref = useRef(null);
@@ -8,6 +9,12 @@ const FinalCTASection = () => {
 
   return (
     <section ref={ref} className="relative py-32 overflow-hidden bg-deep-space">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-deep-space via-deep-space/70 to-deep-space" />
+      </div>
+
       {/* Intense Background Effects */}
       <div 
         className="absolute inset-0"

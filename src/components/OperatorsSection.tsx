@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import heroBg from '@/assets/hero-bg.jpeg';
 
 const OperatorsSection = () => {
   const ref = useRef(null);
@@ -7,6 +8,12 @@ const OperatorsSection = () => {
 
   return (
     <section ref={ref} className="relative py-32 bg-deep-space overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space/80 to-deep-space" />
+      </div>
+
       {/* Scanlines Effect */}
       <div className="absolute inset-0 scanlines opacity-50" />
       
