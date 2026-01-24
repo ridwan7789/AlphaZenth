@@ -7,8 +7,8 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-space">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-space/60 via-deep-space/40 to-deep-space" />
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-space/40 via-deep-space/20 to-deep-space/60" />
       </div>
 
       {/* Targeting Reticle Background */}

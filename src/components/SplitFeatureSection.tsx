@@ -13,9 +13,9 @@ const SplitFeatureSection = () => {
         <img 
           src={heroBg} 
           alt="" 
-          className="w-full h-full object-cover opacity-25"
+          className="w-full h-full object-cover opacity-55"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep-space via-deep-space/80 to-deep-space" />
+        <div className="absolute inset-0 bg-gradient-to-t from-deep-space/50 via-deep-space/30 to-deep-space/50" />
       </div>
 
       <div className="container relative z-10 px-6">

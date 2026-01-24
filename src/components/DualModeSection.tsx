@@ -11,8 +11,8 @@ const DualModeSection = () => {
     <section ref={ref} className="relative py-32 bg-deep-space overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space/90 to-deep-space" />
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-space/40 via-deep-space/30 to-deep-space/40" />
       </div>
       <div className="absolute inset-0 grid-bg opacity-20" />
 
