@@ -1,7 +1,13 @@
-import { Bot, Users, Twitter } from 'lucide-react';
+import { Bot, Users, Twitter, Github } from 'lucide-react';
 
 const SocialIcons = () => {
   const socialLinks = [
+    {
+      name: 'GitHub',
+      url: 'https://github.com/AlphaZenth',
+      icon: Github,
+      color: 'text-gray-300 hover:text-white'
+    },
     {
       name: 'Telegram Bot',
       url: 'https://t.me/AlphaZenthbot',

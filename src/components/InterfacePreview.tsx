@@ -57,35 +57,57 @@ const InterfacePreview = () => {
           </p>
         </motion.div>
 
-        {/* 3D Phone Mockup */}
-        <div ref={containerRef} className="flex justify-center perspective-1000">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotateX: 20 }}
-            animate={isInView ? { opacity: 1, scale: 1, rotateX: 0 } : {}}
-            transition={{ duration: 1, delay: 0.3 }}
-            style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
-            className="relative max-w-sm"
-          >
-            {/* Phone Glow Effect */}
-            <div className="absolute -inset-4 bg-gradient-to-b from-neon-orange/30 via-transparent to-electric-blue/30 blur-2xl rounded-3xl" />
+        {/* Application Previews Side by Side */}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+          {/* 3D Phone Mockup */}
+          <div ref={containerRef} className="perspective-1000">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotateX: 20 }}
+              animate={isInView ? { opacity: 1, scale: 1, rotateX: 0 } : {}}
+              transition={{ duration: 1, delay: 0.3 }}
+              style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+              className="relative max-w-sm"
+            >
+              {/* Phone Glow Effect */}
+              <div className="absolute -inset-4 bg-gradient-to-b from-neon-orange/30 via-transparent to-electric-blue/30 blur-2xl rounded-3xl" />
 
-            {/* Phone Frame */}
-            <div className="relative bg-gradient-to-b from-gunmetal to-secondary rounded-[3rem] p-2 shadow-2xl">
-              <div className="absolute top-6 left-1/2 -translate-x-1/2 w-24 h-6 bg-background rounded-full" />
+              {/* Phone Frame */}
+              <div className="relative bg-gradient-to-b from-gunmetal to-secondary rounded-[3rem] p-2 shadow-2xl">
+                <div className="absolute top-6 left-1/2 -translate-x-1/2 w-24 h-6 bg-background rounded-full" />
+                <img
+                  src="/assets/mobile-mockup.jpeg"
+                  alt="ALPHA ZENTH Mobile Interface"
+                  className="w-full rounded-[2.5rem] object-cover"
+                />
+              </div>
+
+              {/* Reflection */}
+              <div
+                className="absolute inset-0 rounded-[3rem] opacity-20 pointer-events-none"
+                style={{
+                  background: 'linear-gradient(135deg, transparent 30%, hsl(0 0% 100% / 0.3) 50%, transparent 70%)'
+                }}
+              />
+            </motion.div>
+          </div>
+
+          {/* Alpha Labs Application Preview */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative max-w-md"
+          >
+            <div className="bg-gradient-to-b from-gunmetal to-secondary rounded-xl p-2 shadow-2xl">
               <img
-                src="/assets/mobile-mockup.jpeg"
-                alt="ALPHA ZENTH Interface"
-                className="w-full rounded-[2.5rem] object-cover"
+                src="/assets/alpha-labs.png"
+                alt="Alpha Labs Application Interface"
+                className="w-full rounded-lg object-cover"
               />
             </div>
 
-            {/* Reflection */}
-            <div
-              className="absolute inset-0 rounded-[3rem] opacity-20 pointer-events-none"
-              style={{
-                background: 'linear-gradient(135deg, transparent 30%, hsl(0 0% 100% / 0.3) 50%, transparent 70%)'
-              }}
-            />
+            {/* Glow Effect */}
+            <div className="absolute -inset-4 bg-gradient-to-b from-neon-orange/20 via-transparent to-electric-blue/20 blur-2xl rounded-xl" />
           </motion.div>
         </div>
 
