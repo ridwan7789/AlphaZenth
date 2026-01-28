@@ -1,4 +1,5 @@
 import './globals.css'
+import ClientProviders from './ClientProviders';
 
 export const metadata = {
   title: 'ALPHA ZENTH | Premium Supply Bundler & Precision Sniping Bot',
@@ -8,7 +9,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ClientProviders>{children}</ClientProviders>
+      </body>
     </html>
   )
 }

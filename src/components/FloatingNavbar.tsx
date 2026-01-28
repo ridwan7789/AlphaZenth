@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bot, Users, Twitter, Menu, X } from 'lucide-react';
+import { toast } from '@/components/ui/sonner';
 
 const FloatingNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,6 +66,12 @@ const FloatingNavbar = () => {
       color: 'text-gray-300 hover:text-white'
     }
   ];
+
+  const handleDownloadClick = () => {
+    toast.info('AlphaLabs will be available after the token launch. Users must hold a minimum of 500,000 project tokens to access AlphaLabs.', {
+      duration: 7000,
+    });
+  };
 
   return (
     <AnimatePresence>
@@ -183,16 +190,22 @@ const FloatingNavbar = () => {
               </button>
             </div>
 
-            {/* Mobile CTA Button */}
-            <div className="hidden md:block">
+            {/* Mobile CTA Buttons */}
+            <div className="hidden md:flex flex-col gap-2">
               <a
                 href="https://t.me/AlphaZenthbot"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-gradient-to-r from-neon-orange to-fire-red rounded-lg font-orbitron text-xs sm:text-sm tracking-wider text-background font-bold shadow-[0_0_20px_hsl(15_100%_55%/0.3)] hover:shadow-[0_0_30px_hsl(15_100%_55%/0.5)] transition-shadow"
+                className="px-4 py-2 bg-gradient-to-r from-neon-orange to-fire-red rounded-lg font-orbitron text-xs sm:text-sm tracking-wider text-background font-bold shadow-[0_0_20px_hsl(15_100%_55%/0.3)] hover:shadow-[0_0_30px_hsl(15_100%_55%/0.5)] transition-shadow whitespace-nowrap"
               >
                 LAUNCH ALPHA ZENTH
               </a>
+              <button
+                onClick={handleDownloadClick}
+                className="px-4 py-2 bg-gradient-to-r from-neon-orange to-fire-red rounded-lg font-orbitron text-xs sm:text-sm tracking-wider text-background font-bold shadow-[0_0_20px_hsl(15_100%_55%/0.3)] hover:shadow-[0_0_30px_hsl(15_100%_55%/0.5)] transition-shadow whitespace-nowrap"
+              >
+                DOWNLOAD ALPHA LABS
+              </button>
             </div>
           </div>
 
@@ -225,7 +238,7 @@ const FloatingNavbar = () => {
                     </motion.button>
                   ))}
 
-                  {/* Mobile CTA Button */}
+                  {/* Mobile CTA Buttons */}
                   <a
                     href="https://t.me/AlphaZenthbot"
                     target="_blank"
@@ -235,6 +248,15 @@ const FloatingNavbar = () => {
                   >
                     LAUNCH ALPHA ZENTH
                   </a>
+                  <button
+                    onClick={() => {
+                      handleDownloadClick();
+                      setMobileMenuOpen(false);
+                    }}
+                    className="block w-full px-4 py-3 bg-gradient-to-r from-neon-orange to-fire-red rounded-lg font-orbitron text-sm tracking-wider text-background font-bold text-center shadow-[0_0_20px_hsl(15_100%_55%/0.3)] hover:shadow-[0_0_30px_hsl(15_100%_55%/0.5)] transition-shadow"
+                  >
+                    DOWNLOAD ALPHA LABS
+                  </button>
                 </div>
               </motion.div>
             )}

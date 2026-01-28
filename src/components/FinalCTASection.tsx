@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { toast } from '@/components/ui/sonner';
 
 const FinalCTASection = () => {
   const ref = useRef(null);
