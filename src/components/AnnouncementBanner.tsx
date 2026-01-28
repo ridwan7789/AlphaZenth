@@ -22,11 +22,25 @@ const AnnouncementBanner = () => {
               <div className="flex items-center gap-3 flex-1">
                 <AlertTriangle className="w-5 h-5 text-background shrink-0" />
                 <p className="font-rajdhani text-sm md:text-base text-background font-medium">
-                  <span className="font-orbitron font-bold">OFFICIAL NOTICE:</span>{' '}
-                  ALPHA ZENTH has no plans for a token launch. We are fully focused on building{' '}
-                  <span className="font-bold underline">BETA APP</span> and{' '}
-                  <span className="font-bold underline">ALPHA LABS</span>.{' '}
-                  <span className="hidden sm:inline">Beware of scams and impersonators.</span>
+                  <span className="font-orbitron font-bold">🚨 OFFICIAL ANNOUNCEMENT 🚨</span><br className="sm:hidden" />
+                  <span className="block sm:inline">
+                    {' '}ALPHA ZENTH is preparing to launch its official TOKEN on the Solana network in the coming days.
+                  </span>
+                  <br className="hidden sm:block" />
+                  <span className="block sm:inline">
+                    This marks a major milestone as we move forward with the Alpha Zenth ecosystem, alongside the development of{' '}
+                    <span className="font-bold underline">BETA APP</span> and{' '}
+                    <span className="font-bold underline">ALPHA LABS</span>.
+                  </span>
+                  <br className="hidden sm:block" />
+                  <span className="block sm:inline">
+                    More details will be announced soon.
+                    Stay alert, stay sharp — the countdown has begun. 🚀
+                  </span>
+                  <br className="hidden sm:block" />
+                  <span className="block sm:inline font-bold text-yellow-200">
+                    ⚠️ Beware of scams and impersonators. Only trust official Alpha Zenth channels.
+                  </span>
                 </p>
               </div>
               <button
