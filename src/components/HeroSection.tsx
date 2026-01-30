@@ -44,7 +44,21 @@ const HeroSection = () => {
             Precision Is Power. Speed Is Dominance.
           </motion.p>
           <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="text-muted-foreground text-lg md:text-xl mb-4 font-rajdhani">
-            The Apex Tool for Market Execution
+            ALPHA ZENTH TOKEN IS NOW LIVE ON SOLANA!
+          </motion.p>
+          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.0 }} className="text-muted-foreground text-lg md:text-xl mb-2 font-rajdhani max-w-3xl">
+            The official $ALPHA token has successfully launched on the Solana network.
+            This marks a major milestone for the Alpha Zenth ecosystem, alongside the continued development of BETA APP and ALPHA LABS.
+          </motion.p>
+          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.1 }} className="text-muted-foreground text-lg md:text-xl mb-4 font-rajdhani max-w-3xl">
+            Trading is now open. The journey has officially begun.
+          </motion.p>
+          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.2 }} className="text-destructive text-lg md:text-xl mb-4 font-rajdhani max-w-3xl">
+            ⚠️ Stay alert: beware of fake tokens, scams, and impersonators.
+            Only trust links and updates shared through official Alpha Zenth channels.
+          </motion.p>
+          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.3 }} className="text-muted-foreground text-lg md:text-xl mb-6 font-rajdhani max-w-3xl">
+            Welcome to the next phase. 🐺🔥
           </motion.p>
           <div className="mb-8">
             <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.0 }} className="text-neon-orange font-orbitron text-base mb-2 tracking-widest">

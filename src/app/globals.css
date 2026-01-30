@@ -346,6 +346,10 @@
     text-shadow: 0 0 20px hsl(var(--fire-red) / 0.8), 0 0 40px hsl(var(--fire-red) / 0.4);
   }
 
+  .text-warning {
+    color: hsl(0 84% 60%);
+  }
+
   .bg-deep-space {
     background: linear-gradient(180deg, hsl(220 20% 4%), hsl(220 25% 2%));
   }
